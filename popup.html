@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Windows Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="previous-operand" contenteditable="true"></div>
+            <div class="current-operand" contenteditable="true"></div>
+        </div>
+        <div class="memory-buttons">
+            <button class="memory">MC</button>
+            <button class="memory">MR</button>
+            <button class="memory">M+</button>
+            <button class="memory">M-</button>
+            <button class="memory">MS</button>
+        </div>
+        <div class="keypad">
+            <button class="operation">%</button>
+            <button class="operation">√</button>
+            <button class="operation">x²</button>
+            <button class="operation">1/x</button>
+            
+            <button class="operation">CE</button>
+            <button class="operation">C</button>
+            <button class="operation backspace" aria-label="backspace"></button>
+            <button class="operation">÷</button>
+            
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operation">×</button>
+            
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operation">-</button>
+            
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operation">+</button>
+            
+            <button class="operation" data-action="toggle-sign">±</button>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <div class="signature">Dennis Kim</div>
+            
+            <button class="equals">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #f0f0f0;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .calculator {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        padding: 25px;
+        width: 320px;
+    }
+
+    .display {
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: right;
+        min-height: 80px;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .previous-operand {
+        font-size: 1.5rem;
+        color: #666666;
+        min-height: 24px;
+        margin-bottom: 5px;
+    }
+
+    .current-operand {
+        font-size: 2.5rem;
+        color: #000000;
+        font-weight: bold;
+        min-height: 45px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    .keypad {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        transition: all 0.2s ease;
+    }
+
+    .number {
+        background-color: #ffffff;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: none;
+    }
+
+    .number:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .number:active {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .operation {
+        background-color: #f8f9fa;
+        font-weight: 500;
+        color: #495057;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: none;
+    }
+
+    .operation:hover {
+        background-color: #e9ecef;
+    }
+
+    .backspace {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+    }
+
+    .equals {
+        background-color: #228be6;
+        color: white;
+        font-weight: 500;
+        grid-column: span 4;
+        margin-top: 10px;
+        box-shadow: 0 2px 4px rgba(34,139,230,0.3);
+        border: none;
+    }
+
+    .equals:hover {
+        background-color: #1c7ed6;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(34,139,230,0.4);
+    }
+
+    .equals:active {
+        transform: translateY(1px);
+        box-shadow: 0 1px 2px rgba(34,139,230,0.2);
+    }
+
+    .memory-buttons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .memory {
+        padding: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: #e9ecef;
+        color: #495057;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .memory:hover:not(:disabled) {
+        background-color: #dee2e6;
+        transform: translateY(-1px);
+    }
+
+    .memory:disabled {
+        color: #adb5bd;
+        background-color: #f1f3f5;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+    .signature {
+        position: relative;
+        grid-column: span 4;
+        text-align: right;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.1rem;
+        color: #228be6;
+        opacity: 0.7;
+        font-style: italic;
+        transform: rotate(-5deg);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        margin: -5px 10px 5px 0;
+    }
+</style>
+</body>
+</html> 
