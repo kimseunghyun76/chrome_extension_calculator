@@ -1,4 +1,93 @@
-# Chrome Extension Calculator (크롬 확장 프로그램 계산기)
+# Chrome Extension Calculator
+
+A Windows-style calculator implemented as a Chrome extension, featuring modern design, real-time number formatting, and keyboard input support.
+
+[한글 설명 보기](#chrome-extension-calculator-한글)
+
+## Key Features
+
+### 1. Basic Calculation Functions
+- Basic arithmetic operations (addition, subtraction, multiplication, division)
+- Decimal point calculations
+- Automatic thousand separators (,)
+- Backspace functionality
+- Calculation history display
+
+### 2. Advanced Operations
+- Square (x²)
+- Square root (√)
+- Reciprocal (1/x)
+- Percentage (%)
+- Sign change (±)
+
+### 3. Memory Functions
+- MC (Memory Clear): Clear stored value
+- MR (Memory Recall): Recall stored value
+- M+ (Memory Add): Add current value to memory
+- M- (Memory Subtract): Subtract current value from memory
+- MS (Memory Store): Store current value in memory
+
+### 4. User Convenience Features
+- Direct number input support
+- Automatic number formatting (commas every 3 digits)
+- Clipboard paste support
+- Keyboard input support
+- Dynamic font size adjustment
+- Input validation
+
+## Installation
+
+1. Clone or download this repository:
+```bash
+git clone https://github.com/kimseunghyun76/chrome_extension_calculator.git
+```
+
+2. Navigate to `chrome://extensions` in Chrome browser
+3. Enable "Developer mode" in the top right
+4. Click "Load unpacked" button
+5. Select the downloaded folder
+
+## Usage
+
+### Basic Usage
+1. Click the extension icon in Chrome's top right corner
+2. Click the calculator icon to open the popup
+3. Use mouse clicks or keyboard for calculations
+
+### Direct Input Feature
+- Click the calculator display to input numbers directly
+- Numbers are automatically formatted with thousand separators
+- Only numbers and decimal points are allowed
+
+### Memory Function Usage
+1. MS: Store current displayed value in memory
+2. MR: Recall stored memory value
+3. MC: Clear memory value
+4. M+: Add current value to memory
+5. M-: Subtract current value from memory
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Chrome Extension API
+
+## Developer
+
+- Dennis Kim
+
+## License
+
+This project is licensed under the MIT License.
+
+## Credits
+
+- Icons: [Icons8](https://icons8.com)
+
+---
+
+# Chrome Extension Calculator (한글)
 
 Windows 계산기를 모티브로 한 크롬 확장 프로그램 계산기입니다. 모던한 디자인과 다양한 기능을 제공하며, 실시간 숫자 포맷팅과 키보드 입력을 지원합니다.
 
@@ -35,7 +124,7 @@ Windows 계산기를 모티브로 한 크롬 확장 프로그램 계산기입니
 
 ## 설치 방법
 
-1. 이 저장소를 클론하거나 다운로드합니다.
+1. 이 저장소를 클론하거나 다운로드합니다:
 ```bash
 git clone https://github.com/kimseunghyun76/chrome_extension_calculator.git
 ```
