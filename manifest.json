@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
-  "name": "Calculator Extension",
+  "manifest_version": 3,
+  "name": "Calculator Extension", 
   "version": "1.0",
-  "description": "윈도우즈 스타일의 계산기 확장 프로그램",
+  "description": "A Windows-style calculator implemented as a Chrome extension, featuring modern design, real-time number formatting, and keyboard input support.",
   "icons": {
     "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
+    "48": "icons/icon48.png", 
     "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -17,4 +17,4 @@
     }
   },
   "permissions": []
-} 
+}
